@@ -42,6 +42,58 @@
   //code in here wont run until page loads
   $(function(){
 
+    const resetButton = $("#reset");
+    let numberOfResets = $("#num-resets");
+
+    const teamOneShootButton = $("#teamone-shoot");
+    let teamOneNumberShots = $("#teamone-numshots");
+    let teamOneNumberHits = $("#teamone-numhits"); 
+
+    const teamTwoShootButton = $("#teamtwo-shoot");
+    let teamTwoNumberShots = $("#teamtwo-numshots");
+    let teamTwoNumberHits = $("#teamtwo-numhits"); 
+
+    resetButton.click(function(){
+      numberOfResets.html( parseInt(numberOfResets.html()) + 1 );
+
+      teamOneNumberShots.html(0);
+      teamOneNumberHits.html(0);
+
+      teamTwoNumberShots.html(0);
+      teamTwoNumberHits.html(0);
+
+      $("body").css("background-color", "white");
+    })
+    
+
+    teamOneShootButton.click(function(){
+      teamOneNumberShots.html( parseInt(teamOneNumberShots.html()) + 1 );
+
+      let randomNumber = getRandomInt();
+      console.log(randomNumber);
+      if (randomNumber > 50) {
+        teamOneNumberHits.html( parseInt(teamOneNumberHits.html()) + 1 );
+        $("body").css("background-color", "yellow");
+      }
+    })
+
+
+    teamTwoShootButton.click(function(){
+      teamTwoNumberShots.html( parseInt(teamTwoNumberShots.html()) + 1 );
+
+      let randomNumber = getRandomInt();
+      console.log(randomNumber);
+      if (randomNumber > 50) {
+        teamTwoNumberHits.html( parseInt(teamTwoNumberHits.html()) + 1 );
+        $("body").css("background-color", "red");
+      }
+    })
+
+
+    function getRandomInt() {
+      return Math.floor(Math.random() * (100));
+    }
+
 
 
   })

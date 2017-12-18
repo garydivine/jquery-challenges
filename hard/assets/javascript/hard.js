@@ -35,6 +35,20 @@
    //code in here wont run until page loads
    $(function(){
 
+    const feedTemplate = $('h1');
+
+    // doesnt work yet
+    feedTemplate.click(function() {
+      if(!feedTemplate.css("color")=="#FF0000") {
+        feedTemplate.css("color", "red");
+      } else {
+        feedTemplate.css("color", "black");
+      }
+        
+      
+      
+    })
+
 
 
    })

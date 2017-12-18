@@ -18,6 +18,17 @@
   var saveButton = $('#save-button');
   var loadButton = $('#load-button');
 
+  //myStorage = window.localStorage;
+  
+  saveButton.click(function(){
+    localStorage.setItem("previoiusSubmission", getText());
+})
+
+  loadButton.click(function(){
+    let text =  localStorage.getItem("previoiusSubmission");
+    setText(text);
+  })
+
   /**
    * Gets the text from the element for you
    * @return {String}
