@@ -19,10 +19,12 @@
 </head>
 <body>
   <div style="width: 700px;margin: 0 auto;">
-    <h1 style="margin-bottom:5px">Hockey, JavaScript, and jQuery oh My!</h1>
-    <h2 style="margin-top: 0">...the game!</h2>
+    <div id="title">
+      <h1 style="margin-bottom:5px">Hockey, JavaScript, and jQuery oh My!</h1>
+      <h2 style="margin-top: 0">...the game!</h2>
+    </div>
     <div style="margin: 0 auto;text-align:center">
-      <button id="reset">RESET</button><br>
+      <button id="reset" class="btn">RESET</button><br>
       NUMBER OF RESETS: <span id="num-resets">0</span>
     </div>
     <div class="clear"></div>
@@ -30,24 +32,30 @@
       <h2>
         Team 1
       </h2>
+      <h3>
+        The Yellow Jackets
+      </h3>
       <div class="hits">
         SHOTS TAKEN: <span id="teamone-numshots">0</span><br>
         GOALS: <span id="teamone-numhits">0</span>
       </div>
       <div>
-        <button id="teamone-shoot">SHOOT</button>
+        <button id="teamone-shoot" class="btn">SHOOT</button>
       </div>
     </div>
     <div class="right">
       <h2>
         Team 2
       </h2>
+      <h3>
+        The Fire Ants
+      </h3>
       <div class="hits">
         SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br>
         GOALS: <span id="teamtwo-numhits">0</span>
       </div>
       <div>
-        <button id="teamtwo-shoot">SHOOT</button>
+        <button id="teamtwo-shoot" class="btn">SHOOT</button>
       </div>
     </div>
     <div class="clear"></div>

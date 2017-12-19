@@ -53,6 +53,8 @@
     let teamTwoNumberShots = $("#teamtwo-numshots");
     let teamTwoNumberHits = $("#teamtwo-numhits"); 
 
+   const shoot_clip = new Audio(URL="assets/sounds/shoot-sound.wav");
+
     resetButton.click(function(){
       numberOfResets.html( parseInt(numberOfResets.html()) + 1 );
 
@@ -67,25 +69,29 @@
     
 
     teamOneShootButton.click(function(){
+      shoot_clip.play();
       teamOneNumberShots.html( parseInt(teamOneNumberShots.html()) + 1 );
 
       let randomNumber = getRandomInt();
-      console.log(randomNumber);
       if (randomNumber > 50) {
         teamOneNumberHits.html( parseInt(teamOneNumberHits.html()) + 1 );
         $("body").css("background-color", "yellow");
+      } else {
+        $("body").css("background-color", "white");
       }
     })
 
 
     teamTwoShootButton.click(function(){
+     shoot_clip.play();
       teamTwoNumberShots.html( parseInt(teamTwoNumberShots.html()) + 1 );
 
       let randomNumber = getRandomInt();
-      console.log(randomNumber);
       if (randomNumber > 50) {
         teamTwoNumberHits.html( parseInt(teamTwoNumberHits.html()) + 1 );
         $("body").css("background-color", "red");
+      } else {
+        $("body").css("background-color", "white");
       }
     })
 
@@ -93,6 +99,20 @@
     function getRandomInt() {
       return Math.floor(Math.random() * (100));
     }
+
+    $(".left .hits").before(`<img src="assets/images/yellow-jacket.jpeg" alt="yellow jacket" width=90px>`);
+    $(".right .hits").before(`<img src="assets/images/fireant.jpg" alt="yellow jacket" width=90px>`);
+
+
+    $(".btn").css({
+      "color": "#ffffff",
+      "background": "#000000",
+      "padding": "10px 20px 10px 20px"
+    });
+
+    $(".left, .right").css("text-align", "center");
+
+    $("#title").css("text-align", "center")
 
 
 
