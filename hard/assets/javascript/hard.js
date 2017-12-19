@@ -36,18 +36,35 @@
    $(function(){
 
     const feedTemplate = $('h1');
+    let h1CurrentlyRed = false;
 
     // doesnt work yet
     feedTemplate.click(function() {
-      if(!feedTemplate.css("color")=="#FF0000") {
-        feedTemplate.css("color", "red");
+      // if(!(feedTemplate.css("color") == "#FF0000")) {
+      //   feedTemplate.css("color", "#FF0000");
+      // } else {
+      //   feedTemplate.css("color", "#333");
+      // }
+
+      if (h1CurrentlyRed) {
+        feedTemplate.css("color", "#333");
+        h1CurrentlyRed = false;
       } else {
-        feedTemplate.css("color", "black");
+        feedTemplate.css("color", "red");
+        clicked = true;
       }
-        
-      
-      
     })
+
+
+    let bacon = $( "p:contains('Bacon')" ).text();
+
+    console.log(bacon);
+
+
+
+    //$(".post").hide();
+
+    $(".hide-for-small p").hide();
 
 
 
