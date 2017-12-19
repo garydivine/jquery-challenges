@@ -36,33 +36,23 @@
    $(function(){
 
     const feedTemplate = $('h1');
-    let h1CurrentlyRed = false;
+    var h1CurrentlyRed = false;
 
-    // doesnt work yet
     feedTemplate.click(function() {
-      // if(!(feedTemplate.css("color") == "#FF0000")) {
-      //   feedTemplate.css("color", "#FF0000");
-      // } else {
-      //   feedTemplate.css("color", "#333");
-      // }
-
       if (h1CurrentlyRed) {
         feedTemplate.css("color", "#333");
         h1CurrentlyRed = false;
       } else {
         feedTemplate.css("color", "red");
-        clicked = true;
+        h1CurrentlyRed = true;
       }
     })
 
-
-    let bacon = $( "p:contains('Bacon')" ).text();
-
-    console.log(bacon);
+    $(".panel h5:odd").hide();
 
 
-
-    //$(".post").hide();
+    let bacons = $( "p:contains('Bacon')" ).html().replace(/Bacon/g,'LASER VISION');
+    $( "p:contains('Bacon')" ).html(bacons);
 
     $(".hide-for-small p").hide();
 
